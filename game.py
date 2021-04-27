@@ -2,4 +2,4 @@
 
 # Put your code here
 
-print("hi")
+print("Howdy, what's your name?")
