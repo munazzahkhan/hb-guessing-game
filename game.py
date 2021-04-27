@@ -17,17 +17,25 @@ count = 0
 # loop till the number is equal to the guess
 while True:
     #prompt the player to guess the number
-    guess = int(input("Guess the number >  "))
-    if guess < number:
-        print("Your guess is too low, try again.")
-        count += 1
-    elif guess > number:
-        print("Your guess is too high, try again.")
-        count += 1
-    else:
-        print("You are correct.")
-        print(f"You guessed in {count} tries.")
-        break
+    guess = input("Guess the number >  ")
+    try:
+        int(guess)
+        if int(guess) < 1 or int(guess) > 100:
+            print("Please only pick a number between 1 and 100.")
+            count += 1
+        elif int(guess) < number:
+            print("Your guess is too low, try again.")
+            count += 1
+        elif int(guess) > number:
+            print("Your guess is too high, try again.")
+            count += 1
+        else:
+            print("You are correct.")
+            print(f"You guessed in {count} tries.")
+            break
+    except:
+            print("Please only enter an integer.")
+            count += 1
     
 
 
